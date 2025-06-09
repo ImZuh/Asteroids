@@ -6,6 +6,7 @@ from constants import ASTEROID_MIN_RADIUS, WHITE
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
+        self.add(*self.containers)  # Add to sprite groups assigned in main.py
 
     def draw(self, screen):
         pygame.draw.circle(screen, WHITE, self.position, self.radius, 2)
